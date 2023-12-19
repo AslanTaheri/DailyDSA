@@ -1,2 +1,2 @@
 # DailyDSA
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub v2](https://github.com/arunbhardwaj/LeetHub-2.0)
+Practice makes perfect, doing my daily coding and DSA challenges here!
