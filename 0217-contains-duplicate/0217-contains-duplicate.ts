@@ -1,6 +1,10 @@
 function containsDuplicate(nums: number[]): boolean {
-    const numbersSet = new Set(nums);
+    const set = new Set();
 
-    return nums.length !== numbersSet.size;
+    for (let number of nums) {
+        if (set.has(number)) return true;
+        else set.add(number);
+    }
 
-};
+    return false;
+}
