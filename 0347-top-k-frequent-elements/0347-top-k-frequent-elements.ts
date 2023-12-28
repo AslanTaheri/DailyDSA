@@ -1,6 +1,7 @@
 function topKFrequent(nums: number[], k: number): number[] {
-    const frequency = new Map<number, number>();
 
+    // Mapping each number to its frequency
+    const frequency = new Map<number, number>();
     for (const number of nums) {
         if (frequency.get(number)) {
             const counter = frequency.get(number)! + 1;
@@ -10,15 +11,17 @@ function topKFrequent(nums: number[], k: number): number[] {
         }
     }
 
+    // Grouping numbers of same frequency together
     const kFrequent = new Map<number, number[]>();
-    frequency.forEach((value, key) => {
-        if (kFrequent.get(value)) {
-            kFrequent.get(value)!.push(key);
+    frequency.forEach((freq, number) => {
+        if (kFrequent.get(freq)) {
+            kFrequent.get(freq)!.push(number);
         } else {
-            kFrequent.set(value, [key])
+            kFrequent.set(freq, [number])
         }
     })
 
+    // returning the k top frequent
     const result = []
     for (let i = nums.length; i > 0; i--) {
         if (!kFrequent.get(i)) continue;
@@ -30,3 +33,5 @@ function topKFrequent(nums: number[], k: number): number[] {
 
     return result;
 }
+// TIME: O(n)
+// SPACE: O(n) due to Map
