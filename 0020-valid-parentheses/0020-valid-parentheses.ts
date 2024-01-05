@@ -1,5 +1,4 @@
 function isValid(s: string): boolean {
-    // stack open brackets
     const brackets = new Map<string, string>();
 
     brackets
@@ -15,6 +14,7 @@ function isValid(s: string): boolean {
             const opening = stack.pop();
             if (opening !== brackets.get(string)) return false
         } else {
+            // stack open brackets
             stack.push(string)
         }
     }
