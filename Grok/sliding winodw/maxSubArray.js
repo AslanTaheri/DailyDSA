@@ -20,6 +20,9 @@ function maxSubArray(arr, k) {
   console.log(arr.slice(index, index + k));
 }
 
+// Time : O(n)
+// Space: O(1)
+
 //test case
 maxSubArray([2, 1, 5, 1, 3, 2], 3);
 maxSubArray([2, 3, 4, 1, 5], 2);
